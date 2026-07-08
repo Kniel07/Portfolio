@@ -325,11 +325,22 @@ a { color: inherit; text-decoration: none; }
 .timeline-body li strong { color: var(--text); }
 
 /* ---------- Projects ---------- */
+.project-group-heading {
+  color: var(--amber);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  border-top: 1px solid var(--border);
+  padding-top: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+.project-group-heading:first-of-type { border-top: none; padding-top: 0; }
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
+.project-grid:last-of-type { margin-bottom: 0; }
 .project-card {
   background: var(--surface);
   border: 1px solid var(--border);
