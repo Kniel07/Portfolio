@@ -255,8 +255,8 @@ function initReveal() {
 
 // ---------- Résumé design selection ----------
 // Two designs exist for the same, unchanged résumé content: "modern" (the
-// site's current design, always the default for anyone who never finds the
-// Easter egg) and "classic" (an alternate executive layout). Whichever one
+// site's current design) and "classic" (an alternate executive layout,
+// the default for anyone who never finds the Easter egg). Whichever one
 // is applied here is what BOTH résumé formats (PDF and Word) download as,
 // via the normal "Download Résumé" button — this module only ever decides
 // the design; format stays a separate, later choice.
@@ -281,18 +281,18 @@ function getStoredResumeTemplate() {
   } catch (e) {
     // localStorage unavailable (private mode, disabled, etc.) — fall through to default.
   }
-  return "modern";
+  return "classic";
 }
 
 function applyResumeTemplateToDownloads(key) {
-  const template = RESUME_TEMPLATES[key] || RESUME_TEMPLATES.modern;
+  const template = RESUME_TEMPLATES[key] || RESUME_TEMPLATES.classic;
   const pdfLink = document.querySelector('#download-panel a[data-fmt="pdf"]');
   const docxLink = document.querySelector('#download-panel a[data-fmt="docx"]');
   if (pdfLink) pdfLink.href = template.pdf;
   if (docxLink) docxLink.href = template.docx;
 }
 
-// Reflect whatever design was previously applied (or the "modern" default)
+// Reflect whatever design was previously applied (or the "classic" default)
 // on every page load, so the hero Download Résumé button is always correct
 // even if the visitor never opens the Easter egg this session.
 applyResumeTemplateToDownloads(getStoredResumeTemplate());

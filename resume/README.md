@@ -114,10 +114,10 @@ Two designs exist today, both built from the exact same content
 (`resume/source/resume.md` / `resume/current/`) — only the visual layout
 differs:
 
-- **Modern — Current** (default) — `resume/current/resume.pdf` /
+- **Modern — Current** — `resume/current/resume.pdf` /
   `resume/current/resume.docx`, kept in sync via `resume_publish.sh` as
   described above.
-- **Classic / Executive** — `resume/templates/classic/resume.pdf` /
+- **Classic / Executive** (default) — `resume/templates/classic/resume.pdf` /
   `resume/templates/classic/resume.docx`, an alternate single-column,
   ATS-style layout (navy/teal headings, hairline rules, bulleted
   experience) matching the hand-designed master résumé document. The
