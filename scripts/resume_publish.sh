@@ -88,7 +88,7 @@ cmd_new() {
   cp "$SOURCE_MD" "$dest/resume.md"
 
   {
-    echo "version: \"$month\""
+    echo "version: \"$folder_name\""
     echo "revision: $revision"
     echo "status: published"
     echo "created: \"$(date +%Y-%m-%d)\""
