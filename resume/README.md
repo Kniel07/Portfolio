@@ -118,12 +118,16 @@ differs:
   `resume/current/resume.docx`, kept in sync via `resume_publish.sh` as
   described above.
 - **Classic / Executive** — `resume/templates/classic/resume.pdf` /
-  `resume/templates/classic/resume.docx`, an alternate executive layout
-  (navy header, gold section rules, competency table). Its
-  `resume/templates/classic/build/resume.html` is the print source
-  rendered to PDF; the docx is generated separately. This design is
-  edited by hand when `resume/source/resume.md` changes — it is not
-  wired into `resume_publish.sh`.
+  `resume/templates/classic/resume.docx`, an alternate single-column,
+  ATS-style layout (navy/teal headings, hairline rules, bulleted
+  experience) matching the hand-designed master résumé document. The
+  `.docx` is that authored Word document directly — it already carries
+  the current approved content, so it's used as-is rather than
+  regenerated. `resume/templates/classic/build/resume.html` is a
+  faithful HTML/CSS recreation of the same design, rendered to
+  `resume.pdf` via headless Chromium so the PDF and docx stay visually
+  identical. Both are updated by hand when `resume/source/resume.md`
+  changes — this template is not wired into `resume_publish.sh`.
 
 Content (`resume/source/`), template (the visual design), and export
 format (PDF vs. Word) are kept as separate concerns, so more designs can
