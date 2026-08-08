@@ -74,10 +74,10 @@
               Download Résumé
             </button>
             <div class="download-menu-panel" id="download-panel" role="menu">
-              <a href="resume/current/resume.pdf" download="Kirk_Ranches_Resume.pdf" role="menuitem">
+              <a href="resume/current/resume.pdf" download="Kirk_Ranches_Resume.pdf" role="menuitem" data-fmt="pdf">
                 <span class="fmt">PDF</span><span class="hint">Best for applications</span>
               </a>
-              <a href="resume/current/resume.docx" download="Kirk_Ranches_Resume.docx" role="menuitem">
+              <a href="resume/current/resume.docx" download="Kirk_Ranches_Resume.docx" role="menuitem" data-fmt="docx">
                 <span class="fmt">Word</span><span class="hint">Editable .docx</span>
               </a>
             </div>
@@ -574,21 +574,55 @@
   </main>
 </div>
 
-<!-- Hidden résumé template selector, revealed after 9 clicks/taps on the footer copyright -->
+<!-- Hidden résumé design selector, revealed after 9 clicks/taps on the footer copyright -->
 <div class="resume-sheet-backdrop" id="resume-sheet-backdrop">
   <div class="resume-sheet" role="dialog" aria-modal="true" aria-labelledby="resume-sheet-title">
     <div class="resume-sheet-header">
       <h2 id="resume-sheet-title">Résumé Design</h2>
       <button type="button" class="resume-sheet-close" id="resume-sheet-close" aria-label="Close">✕</button>
     </div>
-    <p class="resume-sheet-sub">Choose a format for the current résumé design.</p>
-    <div class="resume-template-option">
-      <div class="rt-name">Current Template</div>
-      <div class="rt-desc">The default résumé design — always up to date.</div>
-      <div class="resume-template-actions">
-        <a class="btn btn-primary btn-sm" href="resume/current/resume.pdf" download="Kirk_Ranches_Resume.pdf">PDF</a>
-        <a class="btn btn-ghost btn-sm" href="resume/current/resume.docx" download="Kirk_Ranches_Resume.docx">Word</a>
+    <p class="resume-sheet-sub">Preview and select the design used for your résumé downloads.</p>
+
+    <form class="resume-template-grid" id="resume-template-form">
+      <div class="resume-template-card">
+        <img class="rt-preview" src="assets/resume-preview-modern.jpg" width="340" height="440" loading="lazy" alt="Miniature preview of the Modern résumé design: off-white background with navy and teal accents">
+        <div class="rt-body">
+          <div class="rt-name-row">
+            <span class="rt-name">Modern — Current</span>
+            <span class="rt-badge">Default</span>
+          </div>
+          <p class="rt-desc">The current résumé design — off-white background, navy &amp; teal accents.</p>
+          <label class="rt-radio-label" for="rt-modern">
+            <input type="radio" name="resume-template" value="modern" id="rt-modern" checked>
+            <span>Use this design</span>
+          </label>
+          <span class="rt-selected-tag" aria-hidden="true">✓ Selected</span>
+        </div>
       </div>
+
+      <div class="resume-template-card">
+        <img class="rt-preview" src="assets/resume-preview-classic.jpg" width="340" height="440" loading="lazy" alt="Miniature preview of the Classic résumé design: navy header band with gold section rules">
+        <div class="rt-body">
+          <div class="rt-name-row">
+            <span class="rt-name">Classic / Executive</span>
+          </div>
+          <p class="rt-desc">A traditional executive layout — navy header, gold rules, structured competency table.</p>
+          <label class="rt-radio-label" for="rt-classic">
+            <input type="radio" name="resume-template" value="classic" id="rt-classic">
+            <span>Use this design</span>
+          </label>
+          <span class="rt-selected-tag" aria-hidden="true">✓ Selected</span>
+        </div>
+      </div>
+    </form>
+
+    <button type="button" class="btn btn-primary resume-apply-btn" id="resume-apply-btn">Apply Design</button>
+
+    <div class="resume-confirm" id="resume-confirm" role="status" aria-live="polite" hidden>
+      <p class="resume-confirm-text">
+        <strong>Design Applied</strong> — Your résumé will now use <strong id="resume-confirm-name"></strong> for future downloads.
+      </p>
+      <button type="button" class="btn btn-ghost btn-sm" id="resume-confirm-continue">Continue</button>
     </div>
   </div>
 </div>

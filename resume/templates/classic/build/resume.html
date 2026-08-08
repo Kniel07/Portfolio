@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Kirk Niel De Guzman Ranches — Résumé (Classic)</title>
+<style>
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 8.5in;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #24272b;
+    font-size: 9.2pt;
+    line-height: 1.32;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :root {
+    --navy: #0a2f5c;
+    --navy-ink: #0c274a;
+    --gold: #b9821f;
+    --gold-bg: #fdf3df;
+    --rule: #d8dde3;
+    --muted: #5a5f66;
+  }
+
+  .header {
+    background: var(--navy);
+    color: #ffffff;
+    padding: 0.3in 0.55in 0.2in;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .header .name {
+    font-family: 'Sora', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20pt;
+    letter-spacing: 0.02em;
+  }
+  .header .headline {
+    margin-top: 0.16in;
+    color: #e9c877;
+    font-weight: 600;
+    font-size: 9.6pt;
+    letter-spacing: 0.02em;
+  }
+  .header .positioning {
+    margin-top: 0.03in;
+    color: #cfd8e6;
+    font-size: 8.3pt;
+    letter-spacing: 0.01em;
+  }
+  .header .contact {
+    text-align: right;
+    font-size: 8.3pt;
+    color: #dfe6f0;
+    line-height: 1.65;
+    white-space: nowrap;
+  }
+  .gold-rule { height: 4px; background: var(--gold); }
+
+  .body { padding: 0.2in 0.55in 0.3in; }
+
+  .section { margin-top: 0.15in; }
+  .section:first-child { margin-top: 0.15in; }
+  .section-heading {
+    font-family: 'Sora', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 8.8pt;
+    letter-spacing: 0.13em;
+    color: var(--navy);
+    text-transform: uppercase;
+    padding-bottom: 0.04in;
+    border-bottom: 2px solid var(--gold);
+    margin-bottom: 0.09in;
+  }
+
+  .profile-text { color: #33363b; font-size: 9.4pt; }
+
+  .impact-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.14in;
+    margin-top: 0.1in;
+  }
+  .impact-cell {
+    background: var(--gold-bg);
+    border-left: 3px solid var(--gold);
+    padding: 0.05in 0.1in;
+  }
+  .impact-cell .val { font-weight: 700; color: var(--navy-ink); font-size: 9.1pt; display: block; }
+  .impact-cell .lbl { color: var(--muted); font-size: 7.6pt; display: block; margin-top: 0.02in; }
+
+  .comp-table { width: 100%; border-collapse: collapse; }
+  .comp-table tr { border-top: 1px solid var(--rule); }
+  .comp-table tr:first-child { border-top: none; }
+  .comp-table td { padding: 0.06in 0; vertical-align: top; }
+  .comp-table td.label {
+    width: 1.9in;
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 8.9pt;
+  }
+  .comp-table td.value { color: #33363b; font-size: 8.9pt; padding-left: 0.2in; }
+
+  .job { margin-bottom: 0.11in; }
+  .job:last-child { margin-bottom: 0; }
+  .job-row { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-title { font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: 9.6pt; color: #1c1e21; }
+  .job-date { color: var(--gold); font-weight: 700; font-size: 8pt; white-space: nowrap; }
+  .job-org { font-style: italic; color: var(--muted); font-size: 8.2pt; margin-top: 0.01in; margin-bottom: 0.06in; }
+  .job ul { list-style: none; }
+  .job li {
+    position: relative;
+    padding-left: 0.17in;
+    margin-bottom: 0.04in;
+    font-size: 8.6pt;
+    color: #2c2f33;
+  }
+  .job li::before { content: "–"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+  .job li strong { color: #17191c; }
+
+  .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.25in; padding-top: 0.08in; border-top: 2px solid var(--gold); }
+  .edu-item .edu-title { font-weight: 700; color: var(--navy); font-size: 8.5pt; margin-bottom: 0.02in; }
+  .edu-item .edu-sub { color: var(--muted); font-size: 8.1pt; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <div class="name">KIRK NIEL DE GUZMAN RANCHES</div>
+      <div class="headline">Data Analytics &amp; Business Process Specialist</div>
+      <div class="positioning">Business Process Automation · Digital Transformation · AI · Business Intelligence</div>
+    </div>
+    <div class="contact">
+      +63 917 637 0274<br>
+      rancheskirk@gmail.com<br>
+      linkedin.com/in/kirk-ranches<br>
+      Sta. Cruz, Lubao, Pampanga
+    </div>
+  </div>
+  <div class="gold-rule"></div>
+
+  <div class="body">
+
+    <div class="section">
+      <div class="section-heading">Profile</div>
+      <p class="profile-text">Data Analytics Specialist with an engineering and Six Sigma foundation. Designs and builds workflow automation, AI knowledge systems, and BI reporting across cross-functional teams at Filinvest Alabang Inc.</p>
+      <div class="impact-row">
+        <div class="impact-cell"><span class="val">2 hr → 5 min</span><span class="lbl">Knowledge retrieval</span></div>
+        <div class="impact-cell"><span class="val">3–12d → same-day</span><span class="lbl">PR submission time</span></div>
+        <div class="impact-cell"><span class="val">100%</span><span class="lbl">Manual data entry eliminated</span></div>
+        <div class="impact-cell"><span class="val">100%</span><span class="lbl">Org-chart updates automated</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-heading">Core Capabilities</div>
+      <table class="comp-table">
+        <tr><td class="label">Process Transformation</td><td class="value">Workflow Architecture · Process Digitalization · Governance</td></tr>
+        <tr><td class="label">Automation &amp; AI</td><td class="value">Smartsheet · SharePoint · Copilot Studio · Power BI</td></tr>
+        <tr><td class="label">Analytics &amp; Engineering</td><td class="value">Advanced Excel · Statistical Analysis · Six Sigma · RCA · KAIZEN</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-heading">Professional Experience</div>
+
+      <div class="job">
+        <div class="job-row">
+          <span class="job-title">Data Analytics Specialist</span>
+          <span class="job-date">Dec 2025 – Present</span>
+        </div>
+        <div class="job-org">Filinvest Alabang Inc. (FAI) — Strategy &amp; Innovation Group | Alabang, Muntinlupa</div>
+        <ul>
+          <li><strong>AFAIK Knowledge Base &amp; AI Chatbot — 2 hr → 5 min.</strong> Architected the SharePoint knowledge base and integrated a Microsoft Copilot Studio AI agent into MS Teams, cutting document retrieval time.</li>
+          <li><strong>CLEAR — CapEx Lifecycle &amp; Expenditure Approval Routing.</strong> Built Finance's role-based CAPEX budget workflow (PD Staff → PD Manager → Finance Manager sign-off) for the Budget &amp; Strategic Finance team.</li>
+          <li><strong>RFP Approval Automation &amp; PR Form Digitalization.</strong> Replaced manual handoffs in Finance's OPEX Monitoring &amp; Control group with validated Smartsheet routing; PR submission time cut from 3–12 days to same-day.</li>
+          <li><strong>P.R.I.M.E. — Project Readiness &amp; Intelligent Monitor Engine; CRD Turnover Monitoring &amp; Automation.</strong> Built an enterprise project-monitoring framework with automated leadership escalation, and Customer Relations Department's turnover system replacing manual Excel tracking.</li>
+          <li><strong>Sales Table of Organization Automation, CLIE &amp; Credit Card Automation.</strong> Automated Sales Support &amp; Leasing's org-chart generation via Power BI (100% manual updates eliminated); built Project Development's CLIE (Customer Lifecycle Intelligence Engine) milestone tracker and Corporate Marketing's reconciliation system (100% manual entry eliminated).</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-row">
+          <span class="job-title">Manufacturing Engineer</span>
+          <span class="job-date">Mar 2024 – Nov 2025</span>
+        </div>
+        <div class="job-org">Yokowo Manufacturing of the Philippines Inc. | Hermosa Ecozone Industrial Park, Bataan</div>
+        <ul>
+          <li><strong>Terminal Applicator X-bar &amp; R Automation.</strong> Collaborated with the PD-Kaizen team on an Excel macro-driven system that auto-mapped data and generated charts; processed, printed, and QA-approved 1,000+ charts across 253 terminal applicator serial numbers.</li>
+          <li><strong>KAIZEN &amp; ISO Compliance.</strong> Led KAIZEN initiatives to reduce waste; conducted ISO 9001 and ISO 14001 internal audits.</li>
+          <li><strong>Process &amp; Equipment Readiness.</strong> Directed troubleshooting to minimize downtime; oversaw machine qualification and calibration.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-row">
+          <span class="job-title">Process Engineer</span>
+          <span class="job-date">Dec 2022 – Nov 2023</span>
+        </div>
+        <div class="job-org">Inari Amertron Inc. | Clark Special Economic Zone, Pampanga</div>
+        <ul>
+          <li><strong>Six Sigma — Defective LC Cable Reduction (Green Belt project).</strong> Reduced monthly defects 50% (520 → 260 units), delivering $2,470/month in savings and doubling cable life from 1,200 → 2,400 insertions via RCA, ANOVA, t-tests, and I-MR analysis.</li>
+          <li><strong>Material Qualification &amp; Training.</strong> Qualified new materials and substitute components; trained operators on revised process standards.</li>
+          <li><strong>Data-Driven Corrective Action.</strong> Used Excel Power Query and Pivot Tables to analyze defect trends.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-heading">Education &amp; Credentials</div>
+      <div class="edu-grid">
+        <div class="edu-item">
+          <div class="edu-title">BS Electronics and Communications Engineering</div>
+          <div class="edu-sub">Lyceum of Subic Bay, SBFZ, Zambales</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">Licensed Electronics Technician</div>
+          <div class="edu-sub">Professional Regulation Commission (PRC)</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-title">Six Sigma Yellow Belt &amp; White Belt</div>
+          <div class="edu-sub">MF Treinamentos</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

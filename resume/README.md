@@ -102,13 +102,33 @@ git push origin resume-2026-09
 ## Résumé design on the site
 
 The site's "Download Résumé" button offers both formats (PDF and Word)
-directly. There's also a hidden template picker: 9 consecutive clicks/taps
-on the footer copyright opens a small "Résumé Design" sheet. Today it only
-lists the one template that exists (`resume/current/`), but the sheet is
-built so additional templates can be added as separate entries later
-without changing this versioning system — content (`resume/source/`),
-template (the exported PDF/docx design), and export format (PDF vs. Word)
-are already kept as separate concerns.
+directly, using whichever résumé *design* is currently selected. There's
+also a hidden design picker: 9 consecutive clicks/taps on the footer
+copyright opens a "Résumé Design" sheet with a preview of each available
+design, a radio control to select one, and an "Apply Design" button. The
+selection is stored in the browser (`localStorage`) and applies to both
+PDF and Word downloads from then on; visitors who never find it always get
+the default design.
+
+Two designs exist today, both built from the exact same content
+(`resume/source/resume.md` / `resume/current/`) — only the visual layout
+differs:
+
+- **Modern — Current** (default) — `resume/current/resume.pdf` /
+  `resume/current/resume.docx`, kept in sync via `resume_publish.sh` as
+  described above.
+- **Classic / Executive** — `resume/templates/classic/resume.pdf` /
+  `resume/templates/classic/resume.docx`, an alternate executive layout
+  (navy header, gold section rules, competency table). Its
+  `resume/templates/classic/build/resume.html` is the print source
+  rendered to PDF; the docx is generated separately. This design is
+  edited by hand when `resume/source/resume.md` changes — it is not
+  wired into `resume_publish.sh`.
+
+Content (`resume/source/`), template (the visual design), and export
+format (PDF vs. Word) are kept as separate concerns, so more designs can
+be added under `resume/templates/<name>/` later without touching the
+versioning system above.
 
 ## Relationship to the rest of the portfolio
 

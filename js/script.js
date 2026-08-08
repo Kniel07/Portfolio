@@ -116,14 +116,63 @@ function initReveal() {
   });
 })();
 
-// ---------- Hidden résumé template selector ----------
+// ---------- Résumé design selection ----------
+// Two designs exist for the same, unchanged résumé content: "modern" (the
+// site's current design, always the default for anyone who never finds the
+// Easter egg) and "classic" (an alternate executive layout). Whichever one
+// is applied here is what BOTH résumé formats (PDF and Word) download as,
+// via the normal "Download Résumé" button — this module only ever decides
+// the design; format stays a separate, later choice.
+const RESUME_TEMPLATES = {
+  modern: {
+    name: "Modern — Current",
+    pdf: "resume/current/resume.pdf",
+    docx: "resume/current/resume.docx",
+  },
+  classic: {
+    name: "Classic / Executive",
+    pdf: "resume/templates/classic/resume.pdf",
+    docx: "resume/templates/classic/resume.docx",
+  },
+};
+const RESUME_TEMPLATE_STORAGE_KEY = "resumeTemplate";
+
+function getStoredResumeTemplate() {
+  try {
+    const stored = localStorage.getItem(RESUME_TEMPLATE_STORAGE_KEY);
+    if (stored && RESUME_TEMPLATES[stored]) return stored;
+  } catch (e) {
+    // localStorage unavailable (private mode, disabled, etc.) — fall through to default.
+  }
+  return "modern";
+}
+
+function applyResumeTemplateToDownloads(key) {
+  const template = RESUME_TEMPLATES[key] || RESUME_TEMPLATES.modern;
+  const pdfLink = document.querySelector('#download-panel a[data-fmt="pdf"]');
+  const docxLink = document.querySelector('#download-panel a[data-fmt="docx"]');
+  if (pdfLink) pdfLink.href = template.pdf;
+  if (docxLink) docxLink.href = template.docx;
+}
+
+// Reflect whatever design was previously applied (or the "modern" default)
+// on every page load, so the hero Download Résumé button is always correct
+// even if the visitor never opens the Easter egg this session.
+applyResumeTemplateToDownloads(getStoredResumeTemplate());
+
+// ---------- Hidden résumé design selector (Easter egg) ----------
 // Trigger: 9 consecutive clicks/taps on the footer copyright, within ~2.5s of
 // each other. Not visually hinted — the footer stays a normal copyright line.
 (function initResumeEasterEgg() {
   const trigger = document.getElementById("footer-copyright");
   const backdrop = document.getElementById("resume-sheet-backdrop");
   const closeBtn = document.getElementById("resume-sheet-close");
-  if (!trigger || !backdrop || !closeBtn) return;
+  const form = document.getElementById("resume-template-form");
+  const applyBtn = document.getElementById("resume-apply-btn");
+  const confirmBox = document.getElementById("resume-confirm");
+  const confirmName = document.getElementById("resume-confirm-name");
+  const continueBtn = document.getElementById("resume-confirm-continue");
+  if (!trigger || !backdrop || !closeBtn || !form || !applyBtn || !confirmBox || !continueBtn) return;
 
   const REQUIRED_HITS = 9;
   const RESET_MS = 2500;
@@ -149,9 +198,47 @@ function initReveal() {
     }
   });
 
+  function updateSelectedCardState() {
+    document.querySelectorAll(".resume-template-card").forEach((card) => {
+      const radio = card.querySelector('input[type="radio"]');
+      card.classList.toggle("is-selected", !!radio && radio.checked);
+    });
+  }
+
+  function resetToSelectionView() {
+    const current = getStoredResumeTemplate();
+    const radio = form.querySelector('input[type="radio"][value="' + current + '"]');
+    if (radio) radio.checked = true;
+    updateSelectedCardState();
+    form.hidden = false;
+    applyBtn.hidden = false;
+    confirmBox.hidden = true;
+  }
+
+  form.addEventListener("change", updateSelectedCardState);
+
+  applyBtn.addEventListener("click", () => {
+    const selected = form.elements["resume-template"].value;
+    try {
+      localStorage.setItem(RESUME_TEMPLATE_STORAGE_KEY, selected);
+    } catch (e) {
+      // localStorage unavailable — selection still applies for this page view.
+    }
+    applyResumeTemplateToDownloads(selected);
+
+    confirmName.textContent = RESUME_TEMPLATES[selected].name;
+    form.hidden = true;
+    applyBtn.hidden = true;
+    confirmBox.hidden = false;
+    continueBtn.focus();
+  });
+
+  continueBtn.addEventListener("click", closeSheet);
+
   let lastFocused = null;
   function openSheet() {
     lastFocused = document.activeElement;
+    resetToSelectionView();
     backdrop.classList.add("open");
     closeBtn.focus();
     document.addEventListener("keydown", onKeydown);
