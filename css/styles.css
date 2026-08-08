@@ -325,6 +325,34 @@ img { max-width: 100%; display: block; }
   margin-bottom: 1.25rem;
 }
 .project-group-heading:first-of-type { border-top: none; padding-top: 0; }
+
+/* Highest-evidence results: quantified, verified outcomes get more visual
+   weight than the rest of the grid and link straight to their case study. */
+.evidence-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.evidence-item {
+  display: block;
+  background: var(--surface);
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.evidence-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.evidence-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--accent);
+  display: block;
+  line-height: 1.2;
+}
+.evidence-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem; display: block; }
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -536,6 +564,7 @@ img { max-width: 100%; display: block; }
   .impact-item:nth-child(2) { border-left: 1px solid var(--border); }
   .impact-item:nth-child(3) { border-left: none; border-top: 1px solid var(--border); }
   .impact-item:nth-child(4) { border-top: 1px solid var(--border); }
+  .evidence-strip { grid-template-columns: 1fr 1fr; }
   .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
   .evolution-step { grid-template-columns: 20px 1fr; gap: 0.85rem; }
 
@@ -548,5 +577,6 @@ img { max-width: 100%; display: block; }
   .impact-strip { grid-template-columns: 1fr; }
   .impact-item { border-left: none !important; border-top: 1px solid var(--border); }
   .impact-item:first-child { border-top: none; }
+  .evidence-strip { grid-template-columns: 1fr; }
   .resume-sheet { max-width: 100%; }
 }
