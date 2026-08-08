@@ -43,20 +43,49 @@ function initScrollSpy() {
 }
 
 // ---------- Scroll reveal ----------
+// Content is visible by default (see .section / .reveal-item in
+// css/styles.css) — this only ever ADDS a temporary hidden state right
+// before animating an element in, and only for elements/thresholds it can
+// guarantee will actually resolve. If IntersectionObserver is unavailable
+// or the user prefers reduced motion, nothing is hidden and every section
+// stays visible as normal HTML/CSS content, no JS required.
 function initReveal() {
-  const targets = document.querySelectorAll(".section");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-  targets.forEach((target) => observer.observe(target));
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  function arm(el, threshold, rootMargin) {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) return; // already on screen — leave visible
+    el.classList.add("reveal-item");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold, rootMargin }
+    );
+    observer.observe(el);
+  }
+
+  // Projects is long enough on mobile that a whole-section threshold can
+  // become mathematically unreachable on short viewports, so it reveals
+  // per-card instead — each card is small enough for the threshold to
+  // always be satisfiable, and the section itself is never hidden.
+  document.querySelectorAll("#projects .project-card").forEach((card) => {
+    arm(card, 0.1, "0px");
+  });
+
+  // Shorter sections reveal as a whole. No negative bottom rootMargin here:
+  // #contact is the last element on the page, so there is no extra scroll
+  // room below it — a shrunk-root margin could make its threshold
+  // unreachable once the page is scrolled to its natural end.
+  document.querySelectorAll("#experience, #capabilities, #contact").forEach((section) => {
+    arm(section, 0.05, "0px");
+  });
 }
 
 // ---------- Download Résumé dropdown ----------

@@ -231,14 +231,21 @@ img { max-width: 100%; display: block; }
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 
 /* ---------- Sections ---------- */
+/* Sections are visible by default — content must never depend on JS or
+   animation to be seen. Reveal-on-scroll is an opt-in enhancement applied
+   by initReveal() in js/script.js, which only hides an element right
+   before animating it in, and only for elements/thresholds it can
+   guarantee will resolve (see .reveal-item below). */
 .section {
   padding: 5.5rem 4rem;
   max-width: 1080px;
+}
+.reveal-item {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.section.in-view { opacity: 1; transform: translateY(0); }
+.reveal-item.revealed { opacity: 1; transform: translateY(0); }
 .section-idx { color: var(--secondary); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.65rem; }
 .section-title { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2rem); margin-bottom: 1.75rem; }
 .section-lede { color: var(--text-muted); max-width: 700px; font-size: 1rem; margin-bottom: 2.25rem; }
