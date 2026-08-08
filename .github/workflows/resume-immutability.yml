@@ -1,0 +1,39 @@
+name: Resume version immutability
+
+on:
+  pull_request:
+    paths:
+      - "resume/versions/**"
+
+jobs:
+  check-immutability:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fail if a published resume version was modified or deleted
+        run: |
+          set -euo pipefail
+
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.sha }}"
+
+          # Only additions are allowed under resume/versions/. Any existing
+          # file being modified (M) or removed (D) means a published, supposedly
+          # immutable resume version was tampered with.
+          offending="$(git diff --name-status "$BASE_SHA" "$HEAD_SHA" -- resume/versions/ \
+            | awk '$1 != "A" { print }')"
+
+          if [ -n "$offending" ]; then
+            echo "::error::Published resume versions under resume/versions/ must never be modified, renamed, or deleted. Offending changes:"
+            echo "$offending"
+            echo
+            echo "If you need to correct a published version, publish a new revision instead:"
+            echo "  scripts/resume_publish.sh new <YYYY-MM> --revision"
+            exit 1
+          fi
+
+          echo "OK: resume/versions/ changes are additions only."
