@@ -2,7 +2,7 @@
 
 Data Analytics Specialist | Data Analytics & Business Process
 
-+63 917 637 0274 · rancheskirk@gmail.com · Sta. Cruz, Lubao, Pampanga
++63 917 637 0274 · rancheskirk@gmail.com · linkedin.com/in/kirk-ranches · Sta. Cruz, Lubao, Pampanga
 
 ## Professional Summary
 
@@ -58,8 +58,11 @@ Engineered a Smartsheet-based system to manage real estate unit turnover, includ
 **Sales Table of Organization Automation** | *Filinvest Alabang Inc.*
 Centralized seller and team structure records into a master Excel source, with automated org chart generation via Power BI — eliminating manual PowerPoint updates and ensuring real-time hierarchy visibility.
 
-**Credit Card & RFP Approval Automation** | *Filinvest Alabang Inc.*
-Architected platforms to replace manual transcription and routing. Achieved 100% reduction in manual data entry time and 50% reduction in RFP approval turnaround.
+**Credit Card Automation** | *Filinvest Alabang Inc.*
+Built a Smartsheet/Excel-based credit card expense reconciliation system with automated Facebook and non-Facebook ad-spend calculators, replacing manual transcription and cutting manual data entry time by 100%.
+
+**RFP Approval Automation** | *Filinvest Alabang Inc.*
+Architected a digital RFP approval routing platform to replace manual handoffs, achieving a 50% reduction in RFP approval turnaround time.
 
 **Exit Interview Digitalization & Analytics** | *Filinvest Alabang Inc.*
 Engineered a Smartsheet-based exit interview system with automated interviewer routing, auto-generated fillable PDF records, and an analytics dashboard surfacing resignation trends, tenure, and attrition drivers.
