@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Kirk Ranches — Data Analytics Specialist</title>
-<meta name="description" content="Kirk Niel De Guzman Ranches — Data Analytics Specialist. Process automation, dashboards, and enterprise digital transformation." />
+<title>Kirk Niel De Guzman Ranches — Data Analytics &amp; Business Process Specialist</title>
+<meta name="description" content="Kirk Niel De Guzman Ranches — Data Analytics &amp; Business Process Specialist. Business process automation, digital transformation, AI, and business intelligence, with an engineering and Six Sigma foundation." />
+<meta property="og:title" content="Kirk Niel De Guzman Ranches — Data Analytics &amp; Business Process Specialist" />
+<meta property="og:description" content="Business process automation, digital transformation, AI, and business intelligence work — with verified, evidence-based results." />
+<meta property="og:type" content="profile" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-<div id="boot-screen" class="boot-screen">
-  <div class="boot-log" id="boot-log"></div>
-</div>
+<div id="boot-screen" class="boot-screen"></div>
 
 <div class="app" id="app" hidden>
 
@@ -25,14 +26,9 @@
       <li><a href="#about" data-section="about"><span class="idx">01</span>About</a></li>
       <li><a href="#experience" data-section="experience"><span class="idx">02</span>Experience</a></li>
       <li><a href="#projects" data-section="projects"><span class="idx">03</span>Projects</a></li>
-      <li><a href="#skills" data-section="skills"><span class="idx">04</span>Skills</a></li>
-      <li><a href="#education" data-section="education"><span class="idx">05</span>Education</a></li>
-      <li><a href="#contact" data-section="contact"><span class="idx">06</span>Contact</a></li>
+      <li><a href="#capabilities" data-section="capabilities"><span class="idx">04</span>Capabilities</a></li>
+      <li><a href="#contact" data-section="contact"><span class="idx">05</span>Contact</a></li>
     </ol>
-    <div class="railnav-status">
-      <span class="status-dot"></span>
-      <span class="mono">SYSTEM READY</span>
-    </div>
   </nav>
 
   <main class="content">
@@ -40,98 +36,178 @@
     <!-- HERO -->
     <section class="hero" id="hero">
       <div class="hero-inner">
-        <p class="eyebrow mono">// PROFILE_ENGINE · ACTIVE</p>
-        <h1 class="hero-name">Kirk Niel De Guzman<br/>Ranches</h1>
-        <p class="hero-title">Data Analytics Specialist — Process Automation &amp; Digital Transformation</p>
-        <p class="hero-location mono">Sta. Cruz, Lubao, Pampanga · +63 917 637 0274</p>
+        <h1 class="hero-name">Kirk Niel De Guzman Ranches</h1>
+        <p class="hero-headline">Data Analytics &amp; Business Process Specialist</p>
+        <p class="hero-positioning">Business Process Automation · Digital Transformation · AI · Business Intelligence</p>
+        <p class="hero-value">I use engineering and process-improvement thinking to understand operational problems, redesign workflows, automate repetitive work, and apply data, BI, and AI where they create measurable business value.</p>
+        <p class="hero-location">Sta. Cruz, Lubao, Pampanga · +63 917 637 0274</p>
 
-        <div class="metrics-panel" aria-label="Career impact metrics">
-          <div class="metric">
-            <span class="metric-value mono" data-target="50" data-suffix="%">0%</span>
-            <span class="metric-label">Defect rate reduction<br/>(Inari Amertron, Six Sigma GB)</span>
+        <div class="impact-strip" aria-label="Selected career impact">
+          <div class="impact-item">
+            <span class="impact-value">2 hr → 5 min</span>
+            <span class="impact-label">Knowledge retrieval</span>
           </div>
-          <div class="metric">
-            <span class="metric-value mono" data-target="100" data-suffix="%">0%</span>
-            <span class="metric-label">Manual data-entry time<br/>eliminated (RFP automation)</span>
+          <div class="impact-item">
+            <span class="impact-value">3–12d → same-day</span>
+            <span class="impact-label">PR submission time</span>
           </div>
-          <div class="metric">
-            <span class="metric-value mono" data-target="2470" data-prefix="$" data-suffix="/mo">$0/mo</span>
-            <span class="metric-label">Cost savings delivered<br/>via cable-defect reduction</span>
+          <div class="impact-item">
+            <span class="impact-value">100%</span>
+            <span class="impact-label">Manual data entry eliminated</span>
+          </div>
+          <div class="impact-item">
+            <span class="impact-value">100%</span>
+            <span class="impact-label">Org-chart updates automated</span>
           </div>
         </div>
 
         <div class="hero-actions">
-          <a href="resume/current/resume.pdf" class="btn btn-primary" download>Download Résumé</a>
+          <div class="download-menu" id="download-menu">
+            <button type="button" class="btn btn-primary" id="download-toggle" aria-haspopup="true" aria-expanded="false">
+              Download Résumé
+            </button>
+            <div class="download-menu-panel" id="download-panel" role="menu">
+              <a href="resume/current/resume.pdf" download="Kirk_Ranches_Resume.pdf" role="menuitem">
+                <span class="fmt">PDF</span><span class="hint">Best for applications</span>
+              </a>
+              <a href="resume/current/resume.docx" download="Kirk_Ranches_Resume.docx" role="menuitem">
+                <span class="fmt">Word</span><span class="hint">Editable .docx</span>
+              </a>
+            </div>
+          </div>
           <a href="#contact" class="btn btn-ghost">Get in touch</a>
         </div>
       </div>
-      <div class="scroll-cue mono">SCROLL <span class="arrow">↓</span></div>
+      <div class="scroll-cue">SCROLL <span class="arrow">↓</span></div>
     </section>
 
     <!-- ABOUT -->
     <section class="section" id="about">
-      <p class="section-idx mono">01 / ABOUT</p>
-      <h2 class="section-title">Professional Summary</h2>
-      <p class="body-text">
-        Data-driven professional and supervisor with proven expertise in leading process optimization, enterprise
-        automation, and digital transformation. Expert at architecting end-to-end technical solutions using
-        Smartsheet, SharePoint, and AI-driven tools (Copilot Studio) to eliminate administrative bottlenecks and
-        enhance operational oversight. Combines a strong background in high-volume manufacturing engineering with
-        a modern, data-led approach to project management, governance, and organizational intelligence.
+      <p class="section-idx">01 / ABOUT</p>
+      <h2 class="section-title">Profile &amp; Career Evolution</h2>
+      <p class="body-text" style="margin-bottom: 2.5rem;">
+        Data Analytics Specialist with an engineering and Six Sigma foundation. Designs and builds workflow
+        automation, AI knowledge systems, and BI reporting across cross-functional teams at Filinvest Alabang Inc.
       </p>
+
+      <div class="evolution">
+        <div class="evolution-step">
+          <div class="evolution-marker"><span class="evolution-dot"></span><span class="evolution-line"></span></div>
+          <div class="evolution-body">
+            <h3>Engineering Foundation</h3>
+            <p>BS Electronics and Communications Engineering, Lyceum of Subic Bay; Licensed Electronics Technician (PRC).</p>
+          </div>
+        </div>
+        <div class="evolution-step">
+          <div class="evolution-marker"><span class="evolution-dot"></span><span class="evolution-line"></span></div>
+          <div class="evolution-body">
+            <h3>Process Engineering</h3>
+            <p>Process Engineer at Inari Amertron Inc. (Dec 2022 – Nov 2023) — root-cause analysis and corrective action on production defects.</p>
+          </div>
+        </div>
+        <div class="evolution-step">
+          <div class="evolution-marker"><span class="evolution-dot"></span><span class="evolution-line"></span></div>
+          <div class="evolution-body">
+            <h3>Six Sigma / Process Improvement</h3>
+            <p>Six Sigma Green Belt project (Inari Amertron) using RCA, ANOVA, and I-MR analysis; Six Sigma Yellow &amp; White Belt, MF Treinamentos.</p>
+          </div>
+        </div>
+        <div class="evolution-step">
+          <div class="evolution-marker"><span class="evolution-dot"></span><span class="evolution-line"></span></div>
+          <div class="evolution-body">
+            <h3>Manufacturing Automation</h3>
+            <p>Manufacturing Engineer at Yokowo Manufacturing (Mar 2024 – Nov 2025) — Excel macro-driven statistical process control automation with the PD-Kaizen team.</p>
+          </div>
+        </div>
+        <div class="evolution-step">
+          <div class="evolution-marker"><span class="evolution-dot"></span><span class="evolution-line"></span></div>
+          <div class="evolution-body">
+            <h3>Business Process Automation</h3>
+            <p>Data Analytics Specialist at Filinvest Alabang Inc. (Dec 2025 – Present) — Smartsheet and workflow automation across Finance, Sales, and Customer Relations.</p>
+          </div>
+        </div>
+        <div class="evolution-step">
+          <div class="evolution-marker"><span class="evolution-dot"></span><span class="evolution-line"></span></div>
+          <div class="evolution-body">
+            <h3>Business Intelligence</h3>
+            <p>Power BI-driven org-chart automation and CLIE, a customer lifecycle intelligence engine, for operational visibility.</p>
+          </div>
+        </div>
+        <div class="evolution-step">
+          <div class="evolution-marker"><span class="evolution-dot"></span></div>
+          <div class="evolution-body">
+            <h3>AI &amp; Digital Transformation</h3>
+            <p>AFAIK Knowledge Base with a Microsoft Copilot Studio AI agent integrated into MS Teams, cutting knowledge retrieval time from 2 hours to 5 minutes.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="project-group-heading" style="border-top: none; padding-top: 0;">EDUCATION &amp; CREDENTIALS</h3>
+      <div class="credentials-list">
+        <div class="credential">
+          <h3>BS Electronics and Communications Engineering</h3>
+          <p>Lyceum of Subic Bay, SBFZ, Zambales</p>
+        </div>
+        <div class="credential">
+          <h3>Licensed Electronics Technician</h3>
+          <p>Professional Regulation Commission (PRC)</p>
+        </div>
+        <div class="credential">
+          <h3>Six Sigma Yellow Belt &amp; White Belt</h3>
+          <p>MF Treinamentos</p>
+        </div>
+      </div>
     </section>
 
     <!-- EXPERIENCE -->
     <section class="section" id="experience">
-      <p class="section-idx mono">02 / EXPERIENCE</p>
+      <p class="section-idx">02 / EXPERIENCE</p>
       <h2 class="section-title">Professional Experience</h2>
 
       <div class="timeline">
         <article class="timeline-item">
           <div class="timeline-meta">
-            <span class="mono timeline-date">Dec 2025 – Present</span>
+            <span class="timeline-date">Dec 2025 – Present</span>
           </div>
           <div class="timeline-body">
             <h3>Data Analytics Specialist</h3>
             <p class="timeline-org">Filinvest Alabang Inc. (FAI) — Strategy &amp; Innovation Group · Alabang, Muntinlupa</p>
-            <p class="timeline-context">Functioning in a supervisory capacity, bridging operational teams and technical system architecture while managing enterprise-wide automation lifecycle.</p>
             <ul>
-              <li><strong>Team Leadership &amp; System Architecture</strong> — Lead the design, documentation, and deployment of complex automation frameworks including P.R.I.M.E, CRD Turnover Monitoring, and RFP approval systems.</li>
-              <li><strong>AI &amp; Knowledge Management Integration</strong> — Spearheaded the development of the AFAIK Knowledge Base, architecting site layout and logic, and managing AI chat agent integration via Copilot Studio for MS Teams.</li>
-              <li><strong>Operational Performance Oversight</strong> — Direct the design of real-time management dashboards that translate operational data into strategic insights for proactive decision-making.</li>
+              <li><strong>AFAIK Knowledge Base &amp; AI Chatbot — 2 hr → 5 min.</strong> Architected the SharePoint knowledge base and integrated a Microsoft Copilot Studio AI agent into MS Teams, cutting document retrieval time.</li>
+              <li><strong>CLEAR — CapEx Lifecycle &amp; Expenditure Approval Routing.</strong> Built Finance's role-based CAPEX budget workflow (PD Staff → PD Manager → Finance Manager sign-off) for the Budget &amp; Strategic Finance team.</li>
+              <li><strong>RFP Approval Automation &amp; PR Form Digitalization.</strong> Replaced manual handoffs in Finance's OPEX Monitoring &amp; Control group with validated Smartsheet routing; PR submission time cut from 3–12 days to same-day.</li>
+              <li><strong>P.R.I.M.E. &amp; CRD Turnover Monitoring.</strong> Built an enterprise project-monitoring framework with automated leadership escalation, and Customer Relations Department's turnover system replacing manual Excel tracking.</li>
+              <li><strong>Sales Org, CLIE &amp; Credit Card Automation.</strong> Automated Sales Support &amp; Leasing's org-chart generation via Power BI (100% manual updates eliminated); built Project Development's CLIE milestone tracker and Corporate Marketing's reconciliation system (100% manual entry eliminated).</li>
             </ul>
           </div>
         </article>
 
         <article class="timeline-item">
           <div class="timeline-meta">
-            <span class="mono timeline-date">Mar 2024 — Nov 2025</span>
+            <span class="timeline-date">Mar 2024 – Nov 2025</span>
           </div>
           <div class="timeline-body">
             <h3>Manufacturing Engineer</h3>
             <p class="timeline-org">Yokowo Manufacturing of the Philippines Inc. · Hermosa Ecozone Industrial Park, Bataan</p>
             <ul>
-              <li>Lead KAIZEN initiatives to improve operational efficiency and reduce waste.</li>
-              <li>Spearhead process troubleshooting to minimize downtime.</li>
-              <li>Conduct ISO 9001 &amp; ISO 14001 internal audits.</li>
-              <li>Oversee machine qualification and calibration for production readiness.</li>
+              <li><strong>Terminal Applicator X-bar &amp; R Automation.</strong> Collaborated with the PD-Kaizen team on an Excel macro-driven system that auto-mapped data and generated charts; processed, printed, and QA-approved 1,000+ charts across 253 terminal applicator serial numbers.</li>
+              <li><strong>KAIZEN &amp; ISO Compliance.</strong> Led KAIZEN initiatives to reduce waste; conducted ISO 9001 and ISO 14001 internal audits.</li>
+              <li><strong>Process &amp; Equipment Readiness.</strong> Directed troubleshooting to minimize downtime; oversaw machine qualification and calibration.</li>
             </ul>
           </div>
         </article>
 
         <article class="timeline-item">
           <div class="timeline-meta">
-            <span class="mono timeline-date">Dec 2022 — Nov 2023</span>
+            <span class="timeline-date">Dec 2022 – Nov 2023</span>
           </div>
           <div class="timeline-body">
             <h3>Process Engineer</h3>
             <p class="timeline-org">Inari Amertron Inc. · Clark Special Economic Zone, Pampanga</p>
             <ul>
-              <li>Delivered $2,470/month cost savings by reducing LC cable defects by 50% (520 → 260 units).</li>
-              <li>Led Six Sigma Green Belt project using ANOVA, t-tests, and I-MR charts.</li>
-              <li>Qualified new materials and substitute components for production.</li>
-              <li>Trained operators and technicians on updated process standards; revised work instructions and conducted internal audits.</li>
-              <li>Utilized Excel Power Query and Pivot Tables to analyze defect trends, enabling data-driven corrective actions.</li>
+              <li><strong>Six Sigma — Defective LC Cable Reduction (Green Belt project).</strong> Reduced monthly defects 50% (520 → 260 units), delivering $2,470/month in savings and doubling cable life from 1,200 → 2,400 insertions via RCA, ANOVA, t-tests, and I-MR analysis.</li>
+              <li><strong>Material Qualification &amp; Training.</strong> Qualified new materials and substitute components; trained operators on revised process standards.</li>
+              <li><strong>Data-Driven Corrective Action.</strong> Used Excel Power Query and Pivot Tables to analyze defect trends.</li>
             </ul>
           </div>
         </article>
@@ -140,163 +216,357 @@
 
     <!-- PROJECTS -->
     <section class="section" id="projects">
-      <p class="section-idx mono">03 / PROJECTS</p>
+      <p class="section-idx">03 / PROJECTS</p>
       <h2 class="section-title">Project Portfolio</h2>
+      <p class="section-lede">
+        The projects below are organized by business function rather than by employer. Each one shows the
+        problem, the solution, and the verified outcome — full case studies are available for the
+        higher-evidence projects.
+      </p>
 
-      <h3 class="project-group-heading mono">FILINVEST ALABANG INC.</h3>
+      <h3 class="project-group-heading" style="border-top: none; padding-top: 0;">HOW I SOLVE PROBLEMS</h3>
+      <div class="method-grid">
+        <div class="method-step">
+          <p class="method-idx">01</p>
+          <h3>Understand</h3>
+          <p>Map the process, stakeholders, data, and pain points.</p>
+        </div>
+        <div class="method-step">
+          <p class="method-idx">02</p>
+          <h3>Analyze</h3>
+          <p>Apply process analysis, data, RCA, and Six Sigma methods where appropriate.</p>
+        </div>
+        <div class="method-step">
+          <p class="method-idx">03</p>
+          <h3>Design</h3>
+          <p>Redesign workflows, controls, information flows, and process logic.</p>
+        </div>
+        <div class="method-step">
+          <p class="method-idx">04</p>
+          <h3>Automate</h3>
+          <p>Build workflows, dashboards, knowledge systems, and automation.</p>
+        </div>
+        <div class="method-step">
+          <p class="method-idx">05</p>
+          <h3>Measure</h3>
+          <p>Track measurable operational outcomes where evidence exists.</p>
+        </div>
+      </div>
+
+      <h3 class="project-group-heading">AI &amp; KNOWLEDGE SYSTEMS</h3>
       <div class="project-grid">
         <article class="project-card">
           <img class="project-snapshot" src="assets/afaik-knowledge-base.png" alt="AFAIK Knowledge Base homepage with quick-access tiles and the AFAIK AI chat agent panel" loading="lazy">
+          <div class="project-tagrow"><span class="project-fn-tag">Enterprise / Cross-Functional</span></div>
           <h3>AFAIK Knowledge Base &amp; AI Chatbot</h3>
-          <p>Designed the SharePoint Knowledge Base architecture and integrated an AI-driven chat agent via Microsoft Copilot Studio, delivering instant organizational support across MS Teams.</p>
-          <div class="tag-row"><span class="tag">SharePoint</span><span class="tag">Copilot Studio</span><span class="tag">AI Chatbot</span></div>
+          <p class="project-snapshot-line">A centralized SharePoint knowledge base with an AI chat agent, so employees get answers in Microsoft Teams instead of searching multiple sources.</p>
+          <span class="project-impact">2 hr → 5 min</span>
+          <div class="tag-row"><span class="tag">SharePoint</span><span class="tag">Copilot Studio</span><span class="tag">MS Teams</span></div>
+          <details class="case-study">
+            <summary>View case study</summary>
+            <div class="case-study-body">
+              <div class="case-study-block"><h4>Context</h4><p>FAI's single source of truth for SOPs and essential guides.</p></div>
+              <div class="case-study-block"><h4>Problem</h4><p>Retrieving the right information meant searching multiple sources and asking around — what should take minutes could take hours or days.</p></div>
+              <div class="case-study-block"><h4>Solution</h4><p>Architected the SharePoint knowledge base and integrated a Microsoft Copilot Studio AI agent, accessible directly through MS Teams.</p></div>
+              <div class="case-study-block"><h4>Technology</h4><p>SharePoint, Microsoft Copilot Studio, Microsoft Teams.</p></div>
+              <div class="case-study-block"><h4>Outcome</h4><p>Average document retrieval time reduced from 2 hours to 5 minutes (95.83%).</p></div>
+              <div class="case-study-block"><h4>What this demonstrates</h4><p>AI-enabled knowledge management, enterprise information architecture, and cross-functional adoption via a tool the whole organization already uses.</p></div>
+            </div>
+          </details>
         </article>
+      </div>
 
-        <article class="project-card">
-          <img class="project-snapshot" src="assets/prime-raw-data-sheet.png" alt="P.R.I.M.E Smartsheet dynamic view showing project task hierarchy, target dates, and status (assignee emails redacted)" loading="lazy">
-          <h3>P.R.I.M.E — Project Readiness &amp; Intelligent Monitor Engine</h3>
-          <p>Developed a standardized project monitoring framework with multi-level workflow reminders and an automated escalation engine to route delayed tasks to leadership.</p>
-          <div class="tag-row"><span class="tag">Smartsheet</span><span class="tag">Workflow Automation</span><span class="tag">Escalation Logic</span></div>
-        </article>
-
-        <article class="project-card">
-          <img class="project-snapshot" src="assets/crd-turnover-dashboard.png" alt="CRD Turnover Dashboard showing qualified buyers, turnaround time, unit inspection phase breakdown, and monthly turnover per project (buyer and company details redacted)" loading="lazy">
-          <h3>CRD Turnover Monitoring &amp; Automation System</h3>
-          <p>Engineered a Smartsheet-based system to manage real estate unit turnover, including automated contact assignment, timed escalation for repair deadlines, and a closed-loop recommitment workflow.</p>
-          <div class="tag-row"><span class="tag">Smartsheet</span><span class="tag">Process Automation</span></div>
-        </article>
-
+      <h3 class="project-group-heading">BUSINESS INTELLIGENCE &amp; ANALYTICS</h3>
+      <div class="project-grid">
         <article class="project-card">
           <img class="project-snapshot" src="assets/sales-table-org-chart.png" alt="Automated Power BI org chart with headcount by position and project, and tenure band distribution" loading="lazy">
+          <div class="project-tagrow"><span class="project-fn-tag">Sales Support &amp; Leasing Division</span></div>
           <h3>Sales Table of Organization Automation</h3>
-          <p>Centralized seller and team structure records into a master Excel source, with automated org chart generation via Power BI — eliminating manual PowerPoint updates and ensuring real-time hierarchy visibility.</p>
-          <div class="tag-row"><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Org Design</span></div>
+          <p class="project-snapshot-line">Replaced manual PowerPoint org-chart updates with a centralized Excel source and automated Power BI chart generation.</p>
+          <span class="project-impact">100% updates automated</span>
+          <div class="tag-row"><span class="tag">Power BI</span><span class="tag">Excel</span></div>
+          <details class="case-study">
+            <summary>View case study</summary>
+            <div class="case-study-body">
+              <div class="case-study-block"><h4>Problem</h4><p>Sales team structure changes (new hires, resignations) required manual PowerPoint updates, with no automated org chart to reflect changes quickly and accurately.</p></div>
+              <div class="case-study-block"><h4>Solution</h4><p>Centralized seller and team structure records into a master Excel source, with automated org-chart generation via Power BI.</p></div>
+              <div class="case-study-block"><h4>Technology</h4><p>Power BI, Excel.</p></div>
+              <div class="case-study-block"><h4>Outcome</h4><p>100% elimination of the manual PowerPoint update cycle — org charts now refresh automatically whenever team structure changes.</p></div>
+              <div class="case-study-block"><h4>What this demonstrates</h4><p>BI-driven reporting automation and data centralization.</p></div>
+            </div>
+          </details>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tagrow"><span class="project-fn-tag">Project Development — FILIGREE</span></div>
+          <h3>CLIE — Customer Lifecycle Intelligence Engine</h3>
+          <p class="project-snapshot-line">Internal admin tool that monitors real estate buyer payments and documentation status, flags approaching milestones, and logs alerts.</p>
+          <span class="project-impact">100% milestone flagging automated</span>
+          <div class="tag-row"><span class="tag">Milestone Tracking</span><span class="tag">Process Visibility</span></div>
+          <details class="case-study">
+            <summary>View case study</summary>
+            <div class="case-study-body">
+              <div class="case-study-block"><h4>Problem</h4><p>No easy way to track client milestone progress or flag buyers approaching the 10% payment threshold; tracking required checking raw data and reviewing entries one by one.</p></div>
+              <div class="case-study-block"><h4>Solution</h4><p>Built a milestone tracker that detects and forecasts upcoming milestones and logs email alerts, replacing manual case-by-case review.</p></div>
+              <div class="case-study-block"><h4>Outcome</h4><p>100% automation of milestone flagging, giving operations real-time visibility into payment-threshold status.</p></div>
+              <div class="case-study-block"><h4>What this demonstrates</h4><p>Lifecycle intelligence system design and operational visibility tooling.</p></div>
+            </div>
+          </details>
+        </article>
+      </div>
+
+      <h3 class="project-group-heading">BUSINESS PROCESS TRANSFORMATION</h3>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-tagrow"><span class="project-fn-tag">Finance — Budget &amp; Strategic Finance</span></div>
+          <h3>CLEAR — CapEx Lifecycle &amp; Expenditure Approval Routing</h3>
+          <p class="project-snapshot-line">Role-based CAPEX budget approval workflow (PD Staff → PD Manager → Finance Manager) replacing fragmented, unvalidated Excel templates.</p>
+          <span class="project-impact">100% unvalidated entry eliminated</span>
+          <div class="tag-row"><span class="tag">Approval Routing</span><span class="tag">Process Governance</span></div>
+          <details class="case-study">
+            <summary>View case study</summary>
+            <div class="case-study-body">
+              <div class="case-study-block"><h4>Problem</h4><p>Excel templates lacked validation on data entries, formulas, and computation logic — undetected errors led to misleading or inaccurate consolidated CAPEX budget figures, on top of a fragmented document process.</p></div>
+              <div class="case-study-block"><h4>Solution</h4><p>Built Finance's role-based CAPEX budget workflow with automated multi-level approval routing (PD Staff → PD Manager → Finance Manager sign-off), built-in data validation, and consolidated formula logic, plus CSV/XLSX/PDF export.</p></div>
+              <div class="case-study-block"><h4>Outcome</h4><p>100% elimination of unvalidated manual data entry that previously risked inaccurate consolidated budget figures; removed the need to manually compile CAPEX reports for audit and finance review.</p></div>
+              <div class="case-study-block"><h4>What this demonstrates</h4><p>Financial process governance and role-based workflow design.</p></div>
+            </div>
+          </details>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tagrow"><span class="project-fn-tag">Finance — OPEX Monitoring &amp; Control</span></div>
+          <h3>RFP Approval Automation</h3>
+          <p class="project-snapshot-line">Automated Smartsheet routing replacing physical signature routing for RFP approvals.</p>
+          <span class="project-impact">7–15d → 6–14d</span>
+          <div class="tag-row"><span class="tag">Smartsheet</span><span class="tag">Approval Routing</span></div>
+          <details class="case-study">
+            <summary>View case study</summary>
+            <div class="case-study-body">
+              <div class="case-study-block"><h4>Problem</h4><p>Physical routing meant it took more than 3 days for an RFP to get signed.</p></div>
+              <div class="case-study-block"><h4>Solution</h4><p>Automated approval workflow integrated into the existing digital RFP process through Smartsheet, replacing physical signature routing.</p></div>
+              <div class="case-study-block"><h4>Outcome</h4><p>RFP signing turnaround cut from 7–15 days to 6–14 days.</p></div>
+              <div class="case-study-block"><h4>What this demonstrates</h4><p>Workflow digitization and approval-routing automation.</p></div>
+            </div>
+          </details>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tagrow"><span class="project-fn-tag">Finance — OPEX Monitoring &amp; Control</span></div>
+          <h3>PR Form Digitalization</h3>
+          <p class="project-snapshot-line">Digital PR routing platform with built-in validation, replacing manual handoffs that caused frequent rework.</p>
+          <span class="project-impact">3–12d → same-day</span>
+          <div class="tag-row"><span class="tag">Smartsheet</span><span class="tag">Validation</span></div>
+          <details class="case-study">
+            <summary>View case study</summary>
+            <div class="case-study-body">
+              <div class="case-study-block"><h4>Problem</h4><p>Approvers frequently caught wrong charging codes, incorrect item codes, or faulty attachment details — errors forced the process back to the initial email procurement stage, causing a 3–12 day turnaround delay.</p></div>
+              <div class="case-study-block"><h4>Solution</h4><p>Structured Smartsheet routing with built-in validation and a full audit trail.</p></div>
+              <div class="case-study-block"><h4>Outcome</h4><p>Cut error-driven rework turnaround from 3–12 days down to same-day submission — roughly a 66–92% reduction depending on the original delay.</p></div>
+              <div class="case-study-block"><h4>What this demonstrates</h4><p>Process error-proofing and workflow validation design.</p></div>
+            </div>
+          </details>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tagrow"><span class="project-fn-tag">Customer Relations Department</span></div>
+          <h3>CRD Turnover Monitoring &amp; Automation</h3>
+          <p class="project-snapshot-line">Smartsheet workflow automating the end-to-end real estate unit turnover process. <em>In progress — Phase 1–2.</em></p>
+          <div class="tag-row"><span class="tag">Smartsheet</span><span class="tag">Process Automation</span></div>
+          <details class="case-study">
+            <summary>View case study</summary>
+            <div class="case-study-body">
+              <div class="case-study-block"><h4>Problem</h4><p>Heavy reliance on manual Excel tracking; fragmented documents and poor collaboration between TSG and CRD slowed the process, with reporting, auditing, and scaling becoming harder as volume grows.</p></div>
+              <div class="case-study-block"><h4>Solution</h4><p>Automated contact assignment and timed escalations replaced manual Excel tracking; turnover deadlines are now monitored electronically in a single trackable system.</p></div>
+              <div class="case-study-block"><h4>Status</h4><p>Ongoing, Phase 1–2, targeting May 2026.</p></div>
+              <div class="case-study-block"><h4>What this demonstrates</h4><p>Cross-departmental workflow redesign built to scale with transaction volume.</p></div>
+            </div>
+          </details>
         </article>
 
         <article class="project-card">
           <img class="project-snapshot" src="assets/credit-card-summary.png" alt="Credit card transaction tracker showing recorded transactions and project dropdown assignment" loading="lazy">
-          <img class="project-snapshot" src="assets/credit-card-facebook-calculator.png" alt="Facebook ad spend calculator with VAT and surcharge breakdown per project (transaction ID redacted)" loading="lazy">
-          <img class="project-snapshot" src="assets/credit-card-nonfacebook-calculator.png" alt="Non-Facebook ad spend calculator with currency conversion and VAT breakdown per project" loading="lazy">
+          <div class="project-tagrow"><span class="project-fn-tag">Corporate Marketing</span></div>
           <h3>Credit Card Automation</h3>
-          <p>Built a Smartsheet/Excel-based credit card expense reconciliation system with automated Facebook and non-Facebook ad-spend calculators, replacing manual transcription and cutting manual data entry time by 100%.</p>
-          <div class="tag-row"><span class="tag">Process Automation</span><span class="tag">Expense Reconciliation</span><span class="tag">Ad Spend Tracking</span></div>
+          <p class="project-snapshot-line">Consolidated multiple reconciliation worksheets into one automated system with Facebook and non-Facebook ad-spend calculators.</p>
+          <span class="project-impact">100% manual entry eliminated</span>
+          <div class="tag-row"><span class="tag">Excel</span><span class="tag">Reconciliation</span></div>
+          <details class="case-study">
+            <summary>View case study</summary>
+            <div class="case-study-body">
+              <div class="case-study-block"><h4>Problem</h4><p>Credit card reconciliation relied on multiple separate worksheets to get the computations and formulas right.</p></div>
+              <div class="case-study-block"><h4>Solution</h4><p>Consolidated multiple worksheets into a single automated reconciliation and ad-spend calculator system.</p></div>
+              <div class="case-study-block"><h4>Outcome</h4><p>100% reduction in manual data entry, and removed calculation errors from manual computation.</p></div>
+              <div class="case-study-block"><h4>What this demonstrates</h4><p>Financial reconciliation automation and error-proofing.</p></div>
+            </div>
+          </details>
         </article>
 
         <article class="project-card">
-          <img class="project-snapshot" src="assets/rfp-approval-flow.png" alt="RFP approval process flow: submission, Smartsheet scanning and encoding, sequential email notification to approvers, manager approval/rejection, notification of results, and document routing to Finance" loading="lazy">
-          <h3>RFP Approval Automation</h3>
-          <p>Architected a digital RFP approval routing platform to replace manual handoffs, achieving a 50% reduction in RFP approval turnaround time.</p>
-          <div class="tag-row"><span class="tag">Process Automation</span><span class="tag">Approval Routing</span></div>
-        </article>
-
-        <article class="project-card">
-          <img class="project-snapshot" src="assets/exit-interview-dashboard.png" alt="Exit Interview Dashboard showing resignation counts, average tenure, reasons for leaving, and position breakdowns" loading="lazy">
-          <h3>Exit Interview Digitalization &amp; Analytics</h3>
-          <p>Engineered a Smartsheet-based exit interview system with automated interviewer routing, auto-generated fillable PDF records, and an analytics dashboard surfacing resignation trends, tenure, and attrition drivers.</p>
-          <div class="tag-row"><span class="tag">Smartsheet</span><span class="tag">Automated PDFs</span><span class="tag">Attrition Analytics</span></div>
+          <img class="project-snapshot" src="assets/prime-raw-data-sheet.png" alt="P.R.I.M.E Smartsheet dynamic view showing project task hierarchy, target dates, and status (assignee emails redacted)" loading="lazy">
+          <div class="project-tagrow"><span class="project-fn-tag">Enterprise / Cross-Functional</span></div>
+          <h3>P.R.I.M.E — Project Readiness &amp; Intelligent Monitor Engine</h3>
+          <p class="project-snapshot-line">Standardized project monitoring framework with automated escalation to leadership. <em>In progress — Phase 1.</em></p>
+          <div class="tag-row"><span class="tag">Smartsheet</span><span class="tag">Escalation Logic</span></div>
+          <details class="case-study">
+            <summary>View case study</summary>
+            <div class="case-study-body">
+              <div class="case-study-block"><h4>Problem</h4><p>No visible tracker existed for managers and executives to check the progress of each deliverable.</p></div>
+              <div class="case-study-block"><h4>Solution</h4><p>Standardized project monitoring framework with multi-level workflow reminders and an automated escalation engine that routes delayed tasks directly to leadership.</p></div>
+              <div class="case-study-block"><h4>Status</h4><p>Ongoing, Phase 1, targeting May 2026.</p></div>
+              <div class="case-study-block"><h4>What this demonstrates</h4><p>Enterprise project governance and escalation-logic design.</p></div>
+            </div>
+          </details>
         </article>
       </div>
 
-      <h3 class="project-group-heading mono">YOKOWO MANUFACTURING OF THE PHILIPPINES INC.</h3>
+      <h3 class="project-group-heading">MANUFACTURING AUTOMATION</h3>
       <div class="project-grid">
         <article class="project-card">
+          <img class="project-snapshot" src="assets/terminal-applicator-xbar-tool.png" alt="Excel macro tool with checkbox row selection for generating X-bar and R chart documents" loading="lazy">
+          <div class="project-tagrow"><span class="project-fn-tag">Yokowo Manufacturing — with PD-Kaizen team</span></div>
           <h3>Terminal Applicator X-bar &amp; R Chart Automation</h3>
-          <img class="project-snapshot" src="assets/terminal-applicator-xbar-tool.png" alt="Excel macro tool with checkbox row selection for generating X-bar and R chart documents, showing Document Number, Form Title, Terminal Type, Applicator Serial, Applicator, and Terminal Part Number columns" loading="lazy">
-          <p>Collaborated with the PD-Kaizen team to build an Excel macro-driven system with checkbox-based row selection, auto-populating and auto-mapping terminal applicator data to generate multiple X-bar &amp; R chart documents in a single run. Processed, printed, and QA-approved 1,000+ new and revised charts, covering 253 terminal applicator serial numbers across different cable and terminal types.</p>
-          <div class="tag-row"><span class="tag">Excel Macros</span><span class="tag">KAIZEN</span><span class="tag">Machine Qualification</span></div>
+          <p class="project-snapshot-line">Excel macro-driven system that auto-maps terminal applicator data to generate statistical process control charts.</p>
+          <span class="project-impact">1,000+ charts · 253 applicators</span>
+          <div class="tag-row"><span class="tag">Excel Macros</span><span class="tag">SPC</span><span class="tag">KAIZEN</span></div>
+          <details class="case-study">
+            <summary>View case study</summary>
+            <div class="case-study-body">
+              <div class="case-study-block"><h4>Approach</h4><p>Collaborated with the PD-Kaizen team to build an Excel macro-driven system with checkbox-based row selection, auto-populating and auto-mapping terminal applicator data.</p></div>
+              <div class="case-study-block"><h4>Outcome</h4><p>Processed, printed, and QA-approved 1,000+ new and revised X-bar &amp; R charts, covering 253 terminal applicator serial numbers across different cable and terminal types.</p></div>
+              <div class="case-study-block"><h4>My role</h4><p>Collaborated with the PD-Kaizen team on system design and rollout.</p></div>
+              <div class="case-study-block"><h4>What this demonstrates</h4><p>Statistical process control automation and cross-team collaboration in a high-volume manufacturing environment.</p></div>
+            </div>
+          </details>
         </article>
       </div>
 
-      <h3 class="project-group-heading mono">INARI AMERTRON INC.</h3>
+      <h3 class="project-group-heading">SIX SIGMA / PROCESS IMPROVEMENT</h3>
       <div class="project-grid">
         <article class="project-card">
-          <h3>Defective LC Cable Reduction (Six Sigma Green Belt)</h3>
-          <img class="project-snapshot" src="assets/lc-cable-sigma-improvement.png" alt="Process Sigma calculation comparing before and after improvement: defects down from 150 to 26, yield up from 81.25% to 94.09%, sigma up from 2.39 to 3.06" loading="lazy">
-          <p>Reduced monthly defects by 50% through root cause analysis and process optimization; doubled cable usage life from 1,200 to 2,400 insertions.</p>
-          <div class="tag-row"><span class="tag">Six Sigma</span><span class="tag">RCA / FMEA</span><span class="tag">KAIZEN</span></div>
+          <img class="project-snapshot" src="assets/lc-cable-sigma-improvement.png" alt="Process improvement summary for the LC cable defect reduction project" loading="lazy">
+          <div class="project-tagrow"><span class="project-fn-tag">Inari Amertron — Six Sigma Green Belt Project</span></div>
+          <h3>Defective LC Cable Reduction</h3>
+          <p class="project-snapshot-line">Root-cause analysis and Six Sigma methods applied to a high-defect cable production line.</p>
+          <span class="project-impact">50% defect reduction</span>
+          <div class="tag-row"><span class="tag">RCA</span><span class="tag">ANOVA</span><span class="tag">I-MR</span></div>
+          <details class="case-study">
+            <summary>View case study</summary>
+            <div class="case-study-body">
+              <div class="case-study-block"><h4>Approach</h4><p>Six Sigma Green Belt project using ANOVA, t-tests, and I-MR charts for root-cause analysis; qualified new materials and substitute components, and trained operators on revised process standards.</p></div>
+              <div class="case-study-block"><h4>Technology</h4><p>RCA, ANOVA, t-tests, I-MR analysis, Excel Power Query &amp; Pivot Tables.</p></div>
+              <div class="case-study-block"><h4>Outcome</h4><p>50% monthly defect reduction (520 → 260 units), $2,470/month in savings, and cable life doubled from 1,200 → 2,400 insertions.</p></div>
+              <div class="case-study-block"><h4>What this demonstrates</h4><p>Statistical root-cause analysis and Six Sigma methodology applied to a measurable production outcome.</p></div>
+            </div>
+          </details>
+        </article>
+      </div>
+
+      <h3 class="project-group-heading">ADDITIONAL PROJECTS</h3>
+      <div class="project-grid">
+        <article class="project-card additional">
+          <div class="project-tagrow"><span class="project-fn-tag">Sales Support &amp; Leasing — Talent Acquisition</span></div>
+          <h3>Exit Interview Digitalization &amp; Analytics</h3>
+          <p class="project-snapshot-line">Smartsheet-based exit interview system with automated interviewer routing, auto-generated fillable PDF records, and a dashboard surfacing resignation trends and tenure.</p>
+          <div class="tag-row"><span class="tag">Smartsheet</span><span class="tag">Analytics</span></div>
+        </article>
+        <article class="project-card additional">
+          <div class="project-tagrow"><span class="project-fn-tag">Corporate Marketing</span></div>
+          <h3>Marketing Campaign Progress Tracker</h3>
+          <p class="project-snapshot-line">Multi-level workflow reminders giving Marketing Group managers and executives real-time visibility into campaign task progress. <em>Ongoing.</em></p>
+          <div class="tag-row"><span class="tag">Workflow Automation</span></div>
+        </article>
+        <article class="project-card additional">
+          <div class="project-tagrow"><span class="project-fn-tag">Business unit not specified in source material</span></div>
+          <h3>Residential Process Documentation</h3>
+          <p class="project-snapshot-line">End-to-end Business Process Architecture for the residential development lifecycle, from land acquisition through after-sales support. <em>Ongoing, targeting Dec 2026.</em></p>
+          <div class="tag-row"><span class="tag">Process Documentation</span></div>
         </article>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <p class="section-idx mono">04 / SKILLS</p>
-      <h2 class="section-title">Core Competencies</h2>
+    <!-- CAPABILITIES -->
+    <section class="section" id="capabilities">
+      <p class="section-idx">04 / CAPABILITIES</p>
+      <h2 class="section-title">Capabilities</h2>
 
       <div class="skills-grid">
         <div class="skill-group">
-          <h3 class="mono">Strategic Leadership</h3>
-          <p>Project Governance · Process Ownership · Change Management · Team Leadership</p>
+          <h3>Process Transformation</h3>
+          <p>Workflow Architecture · Process Digitalization · Governance</p>
         </div>
         <div class="skill-group">
-          <h3 class="mono">Process Automation</h3>
-          <p>Smartsheet (P.R.I.M.E Framework, Automation, Workflows) · Logic-based Routing</p>
+          <h3>Automation &amp; AI</h3>
+          <p>Smartsheet · SharePoint · Copilot Studio · Power BI</p>
         </div>
         <div class="skill-group">
-          <h3 class="mono">AI &amp; Knowledge Mgmt</h3>
-          <p>Microsoft Copilot Studio · SharePoint Development · AI Chatbot Integration</p>
-        </div>
-        <div class="skill-group">
-          <h3 class="mono">Data Analytics</h3>
-          <p>Advanced Excel (Power Pivot, Power Query, Pivot Tables) · Power BI · Dashboard Design</p>
-        </div>
-        <div class="skill-group">
-          <h3 class="mono">Engineering &amp; Quality</h3>
-          <p>ISO 9001/14001 · Six Sigma Green Belt Project · Machine Qualification · RCA / FMEA</p>
+          <h3>Analytics &amp; Engineering</h3>
+          <p>Advanced Excel · Statistical Analysis · Six Sigma · RCA · KAIZEN</p>
         </div>
       </div>
-    </section>
 
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-      <p class="section-idx mono">05 / EDUCATION</p>
-      <h2 class="section-title">Education &amp; Credentials</h2>
-
-      <div class="credentials-list">
-        <div class="credential">
-          <h3>BS Electronics and Communication Engineering</h3>
-          <p class="mono">Lyceum of Subic Bay — SBFZ, Zambales</p>
-        </div>
-        <div class="credential">
-          <h3>Licensed Electronics Technician</h3>
-          <p class="mono">PRC License No. 0024323</p>
-        </div>
-        <div class="credential">
-          <h3>Six Sigma Yellow Belt &amp; White Belt</h3>
-          <p class="mono">MF Treinamentos</p>
-        </div>
+      <h3 class="project-group-heading" style="border-top: none; padding-top: 0;">WHAT I ACTUALLY BUILD</h3>
+      <div class="build-grid">
+        <div class="build-item"><h4>Workflow automation</h4><p>CLEAR, RFP Approval, PR Form Digitalization, CRD Turnover</p></div>
+        <div class="build-item"><h4>Knowledge bases &amp; AI agents</h4><p>AFAIK Knowledge Base, Copilot Studio integration</p></div>
+        <div class="build-item"><h4>BI dashboards &amp; org automation</h4><p>Sales Table of Organization, CLIE</p></div>
+        <div class="build-item"><h4>Approval routing</h4><p>CLEAR, RFP Approval Automation</p></div>
+        <div class="build-item"><h4>Lifecycle trackers</h4><p>CLIE — Customer Lifecycle Intelligence Engine</p></div>
+        <div class="build-item"><h4>Statistical process control</h4><p>Terminal Applicator X-bar &amp; R Chart Automation</p></div>
+        <div class="build-item"><h4>Excel macro systems</h4><p>Yokowo chart automation, Credit Card reconciliation</p></div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section class="section section-contact" id="contact">
-      <p class="section-idx mono">06 / CONTACT</p>
+      <p class="section-idx">05 / CONTACT</p>
       <h2 class="section-title">Let's Connect</h2>
       <p class="body-text">
-        Open to conversations on process automation, data analytics, and digital transformation initiatives.
+        Interested in improving a business process? Open to conversations on process automation, data analytics, and digital transformation initiatives.
       </p>
       <div class="contact-grid">
         <a class="contact-link" href="mailto:rancheskirk@gmail.com">
-          <span class="mono">EMAIL</span>
+          <span>EMAIL</span>
           <span>rancheskirk@gmail.com</span>
         </a>
         <a class="contact-link" href="tel:+639176370274">
-          <span class="mono">PHONE</span>
+          <span>PHONE</span>
           <span>+63 917 637 0274</span>
         </a>
         <a class="contact-link" href="https://www.linkedin.com/in/kirk-ranches" target="_blank" rel="noopener">
-          <span class="mono">LINKEDIN</span>
+          <span>LINKEDIN</span>
           <span>linkedin.com/in/kirk-ranches</span>
         </a>
         <div class="contact-link contact-link-static">
-          <span class="mono">LOCATION</span>
+          <span>LOCATION</span>
           <span>Sta. Cruz, Lubao, Pampanga</span>
         </div>
       </div>
-      <footer class="footer mono">© 2026 Kirk Niel De Guzman Ranches</footer>
+      <footer class="footer">
+        <span class="footer-copyright" id="footer-copyright" tabindex="0" aria-label="Copyright">© 2026 Kirk Niel De Guzman Ranches</span>
+      </footer>
     </section>
 
   </main>
+</div>
+
+<!-- Hidden résumé template selector, revealed after 9 clicks/taps on the footer copyright -->
+<div class="resume-sheet-backdrop" id="resume-sheet-backdrop">
+  <div class="resume-sheet" role="dialog" aria-modal="true" aria-labelledby="resume-sheet-title">
+    <div class="resume-sheet-header">
+      <h2 id="resume-sheet-title">Résumé Design</h2>
+      <button type="button" class="resume-sheet-close" id="resume-sheet-close" aria-label="Close">✕</button>
+    </div>
+    <p class="resume-sheet-sub">Choose a format for the current résumé design.</p>
+    <div class="resume-template-option">
+      <div class="rt-name">Current Template</div>
+      <div class="rt-desc">The default résumé design — always up to date.</div>
+      <div class="resume-template-actions">
+        <a class="btn btn-primary btn-sm" href="resume/current/resume.pdf" download="Kirk_Ranches_Resume.pdf">PDF</a>
+        <a class="btn btn-ghost btn-sm" href="resume/current/resume.docx" download="Kirk_Ranches_Resume.docx">Word</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="js/script.js"></script>
