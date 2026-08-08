@@ -8,8 +8,9 @@
 #
 #   resume_publish.sh update-current <YYYY-MM|YYYY-MM-rNN>
 #       Promotes an already-published version to resume/current/, but only
-#       after confirming that version has a real resume.pdf. Fails safely:
-#       if anything is missing, resume/current/ is left completely untouched.
+#       after confirming that version has a real resume.pdf and resume.docx.
+#       Fails safely: if anything is missing, resume/current/ is left
+#       completely untouched.
 #
 # resume/versions/ is treated as an immutable archive: this script only ever
 # creates new files there, never edits or removes existing ones.
@@ -117,7 +118,8 @@ EOF
   echo "resume/current/ has NOT been updated yet."
   echo "Next steps:"
   echo "  1. Fill in $dest/CHANGELOG.md"
-  echo "  2. Export/design the PDF for this version and save it as $dest/resume.pdf"
+  echo "  2. Export/design the PDF and Word versions for this version and save them as"
+  echo "     $dest/resume.pdf and $dest/resume.docx"
   echo "  3. Run: $(basename "$0") update-current $folder_name"
 }
 
@@ -131,6 +133,7 @@ cmd_update_current() {
   [ -d "$dest" ] || { echo "error: $dest does not exist — run 'new' first" >&2; exit 1; }
   [ -s "$dest/resume.md" ] || { echo "error: $dest/resume.md is missing or empty" >&2; exit 1; }
   [ -s "$dest/resume.pdf" ] || { echo "error: $dest/resume.pdf is missing or empty — add the exported PDF before promoting to current" >&2; exit 1; }
+  [ -s "$dest/resume.docx" ] || { echo "error: $dest/resume.docx is missing or empty — add the exported Word doc before promoting to current" >&2; exit 1; }
 
   # Stage first so a failure never leaves resume/current/ partially updated.
   local staging
@@ -138,10 +141,12 @@ cmd_update_current() {
 
   cp "$dest/resume.md" "$staging/resume.md"
   cp "$dest/resume.pdf" "$staging/resume.pdf"
+  cp "$dest/resume.docx" "$staging/resume.docx"
 
   mkdir -p "$CURRENT_DIR"
   mv -f "$staging/resume.md" "$CURRENT_DIR/resume.md"
   mv -f "$staging/resume.pdf" "$CURRENT_DIR/resume.pdf"
+  mv -f "$staging/resume.docx" "$CURRENT_DIR/resume.docx"
   rmdir "$staging"
 
   echo "resume/current/ now points to $folder_name"

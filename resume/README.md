@@ -12,13 +12,16 @@ resume/
 │   └── resume.md          canonical, freely-editable draft
 ├── current/
 │   ├── resume.md           mirror of the latest PUBLISHED version
-│   └── resume.pdf          mirror of the latest PUBLISHED version — this is
-│                            what index.html links to
+│   ├── resume.pdf          mirror of the latest PUBLISHED version — this is
+│   │                        what index.html's PDF download links to
+│   └── resume.docx         mirror of the latest PUBLISHED version — this is
+│                            what index.html's Word download links to
 └── versions/
     └── <YEAR>/
         └── <YYYY-MM>/
             ├── resume.md    frozen snapshot of source at publish time
             ├── resume.pdf   the designed/exported PDF for this version
+            ├── resume.docx  the designed/exported Word doc for this version
             ├── metadata.yml version, revision, status, created, base_version
             └── CHANGELOG.md what changed and why
 ```
@@ -59,10 +62,11 @@ resume/
    (Added / Updated / Removed / Reason). Diffing against the previous
    version's `resume.md` is a good way to see exactly what changed.
 
-4. **Add the PDF.** This repo does not auto-render Markdown into a PDF —
-   the existing résumé has bespoke visual design that a plain converter
-   wouldn't reproduce. Export/design the PDF yourself and save it as
-   `resume/versions/<YEAR>/<YYYY-MM>/resume.pdf`.
+4. **Add the PDF and Word doc.** This repo does not auto-render Markdown
+   into a PDF or docx — the résumé has bespoke visual design that a plain
+   converter wouldn't reproduce. Export/design both yourself and save them
+   as `resume/versions/<YEAR>/<YYYY-MM>/resume.pdf` and
+   `resume/versions/<YEAR>/<YYYY-MM>/resume.docx`.
 
 5. **Promote it to current:**
 
@@ -71,8 +75,9 @@ resume/
    ```
 
    This refuses to run (and leaves `resume/current/` completely untouched)
-   unless a real, non-empty `resume.pdf` already exists for that version —
-   the live download link is never left broken mid-publish.
+   unless a real, non-empty `resume.pdf` **and** `resume.docx` already exist
+   for that version — the live download links are never left broken or
+   mismatched mid-publish.
 
 ### Same-month corrections
 
@@ -93,6 +98,17 @@ Not automated, but if you want an extra anchor point:
 git tag resume-2026-09
 git push origin resume-2026-09
 ```
+
+## Résumé design on the site
+
+The site's "Download Résumé" button offers both formats (PDF and Word)
+directly. There's also a hidden template picker: 9 consecutive clicks/taps
+on the footer copyright opens a small "Résumé Design" sheet. Today it only
+lists the one template that exists (`resume/current/`), but the sheet is
+built so additional templates can be added as separate entries later
+without changing this versioning system — content (`resume/source/`),
+template (the exported PDF/docx design), and export format (PDF vs. Word)
+are already kept as separate concerns.
 
 ## Relationship to the rest of the portfolio
 
