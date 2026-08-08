@@ -11,6 +11,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css" />
+<noscript><style>
+  /* Progressive enhancement: #app is normally revealed by the boot-sequence
+     script (js/script.js). Without JavaScript that never runs, so this
+     shows the content directly instead, matching #app's real "display: flex"
+     from css/styles.css so the layout is unaffected. */
+  #boot-screen { display: none !important; }
+  #app { display: flex !important; }
+</style></noscript>
 </head>
 <body>
 
