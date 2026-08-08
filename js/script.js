@@ -1,3 +1,140 @@
+// ---------- Theme switcher ----------
+// The inline script in <head> already resolved and applied the theme before
+// first paint (no flash of the wrong theme); this module just wires up the
+// visible control and keeps "system" live if the OS theme changes mid-session.
+(function initThemeSwitcher() {
+  const THEME_KEY = "theme";
+  const buttons = document.querySelectorAll(".theme-btn");
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  if (!buttons.length) return;
+
+  function getStoredPref() {
+    try {
+      const v = localStorage.getItem(THEME_KEY);
+      if (v === "light" || v === "dark" || v === "system") return v;
+    } catch (e) {
+      // localStorage unavailable — fall through to default.
+    }
+    return "system";
+  }
+
+  function resolve(pref) {
+    return pref === "system" ? (media.matches ? "dark" : "light") : pref;
+  }
+
+  function applyTheme(pref) {
+    document.documentElement.setAttribute("data-theme", resolve(pref));
+    buttons.forEach((btn) => {
+      btn.setAttribute("aria-pressed", String(btn.dataset.themeChoice === pref));
+    });
+  }
+
+  let currentPref = getStoredPref();
+  applyTheme(currentPref);
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      currentPref = btn.dataset.themeChoice;
+      try {
+        localStorage.setItem(THEME_KEY, currentPref);
+      } catch (e) {
+        // localStorage unavailable — selection still applies for this page view.
+      }
+      applyTheme(currentPref);
+    });
+  });
+
+  media.addEventListener("change", () => {
+    if (currentPref === "system") applyTheme("system");
+  });
+})();
+
+// ---------- Project evidence gallery ----------
+// Each project card that has real evidence images wraps its snapshot <img>
+// in a <button class="project-snapshot-btn"> and carries a sibling
+// <script type="application/json" class="project-gallery-data"> with the
+// [{src, caption}, ...] list. Only that image button opens the gallery —
+// the rest of the card (title, tags, case-study) is untouched.
+(function initProjectGallery() {
+  const backdrop = document.getElementById("gallery-backdrop");
+  const imageEl = document.getElementById("gallery-image");
+  const projectEl = document.getElementById("gallery-project");
+  const captionEl = document.getElementById("gallery-caption");
+  const counterEl = document.getElementById("gallery-counter");
+  const closeBtn = document.getElementById("gallery-close");
+  const prevBtn = document.getElementById("gallery-prev");
+  const nextBtn = document.getElementById("gallery-next");
+  const triggers = document.querySelectorAll(".project-snapshot-btn");
+  if (!backdrop || !triggers.length) return;
+
+  let currentImages = [];
+  let currentIndex = 0;
+  let currentProjectName = "";
+  let lastFocused = null;
+
+  function render() {
+    const item = currentImages[currentIndex];
+    imageEl.src = item.src;
+    imageEl.alt = currentProjectName + " — " + item.caption;
+    projectEl.textContent = currentProjectName;
+    captionEl.textContent = item.caption;
+    counterEl.textContent = (currentIndex + 1) + " / " + currentImages.length;
+    const multi = currentImages.length > 1;
+    prevBtn.hidden = !multi;
+    nextBtn.hidden = !multi;
+  }
+
+  function open(images, projectName, startIndex, triggerEl) {
+    currentImages = images;
+    currentProjectName = projectName;
+    currentIndex = startIndex;
+    lastFocused = triggerEl;
+    render();
+    backdrop.classList.add("open");
+    closeBtn.focus();
+    document.addEventListener("keydown", onKeydown);
+  }
+
+  function close() {
+    backdrop.classList.remove("open");
+    document.removeEventListener("keydown", onKeydown);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  function step(delta) {
+    currentIndex = (currentIndex + delta + currentImages.length) % currentImages.length;
+    render();
+  }
+
+  function onKeydown(e) {
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowLeft") step(-1);
+    else if (e.key === "ArrowRight") step(1);
+  }
+
+  triggers.forEach((btn) => {
+    const dataEl = btn.parentElement.querySelector(".project-gallery-data");
+    if (!dataEl) return;
+    let images;
+    try {
+      images = JSON.parse(dataEl.textContent);
+    } catch (e) {
+      return;
+    }
+    if (!Array.isArray(images) || !images.length) return;
+    const nameEl = btn.parentElement.querySelector("h3");
+    const projectName = nameEl ? nameEl.textContent.trim() : "";
+    btn.addEventListener("click", () => open(images, projectName, 0, btn));
+  });
+
+  closeBtn.addEventListener("click", close);
+  prevBtn.addEventListener("click", () => step(-1));
+  nextBtn.addEventListener("click", () => step(1));
+  backdrop.addEventListener("click", (e) => {
+    if (e.target === backdrop) close();
+  });
+})();
+
 // ---------- Boot ----------
 // Brief fade only — no terminal animation, per the site's "mature professional,
 // not a tech demo" design direction.

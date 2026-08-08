@@ -2,6 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<script>
+  /* Resolve the theme before first paint, so there's no flash of the wrong
+     theme. Kept tiny and synchronous, and is the only source of truth for
+     "system" — script.js reuses this exact logic when the OS theme changes. */
+  (function () {
+    try {
+      var pref = localStorage.getItem('theme');
+      if (pref !== 'light' && pref !== 'dark' && pref !== 'system') pref = 'system';
+      var resolved = pref === 'system'
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : pref;
+      document.documentElement.setAttribute('data-theme', resolved);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Kirk Niel De Guzman Ranches — Data Analytics &amp; Business Process Specialist</title>
 <meta name="description" content="Kirk Niel De Guzman Ranches — Data Analytics &amp; Business Process Specialist. Business process automation, digital transformation, AI, and business intelligence, with an engineering and Six Sigma foundation." />
@@ -234,6 +251,21 @@
         </article>
 
         <article class="project-card">
+          <button type="button" class="project-snapshot-btn" aria-label="View 7 process diagrams for CRD Turnover Monitoring &amp; Automation">
+            <img class="project-snapshot" src="assets/gallery/crd/slide-02.png" alt="CRD turnover process at a glance: six phases from Discovery through TMO to No-Show Escalation" loading="lazy">
+            <span class="gallery-badge">7 diagrams</span>
+          </button>
+          <script type="application/json" class="project-gallery-data">
+            [
+              {"src": "assets/gallery/crd/slide-02.png", "caption": "Process overview — six phases from discovery to completion"},
+              {"src": "assets/gallery/crd/slide-03.png", "caption": "Phase 1 — Discovery through TMO"},
+              {"src": "assets/gallery/crd/slide-04.png", "caption": "Phase 2 — Unit Inspection"},
+              {"src": "assets/gallery/crd/slide-05.png", "caption": "Phase 3 — Turnover Scheduling"},
+              {"src": "assets/gallery/crd/slide-06.png", "caption": "Phase 4 — Turnover Day, Buyer's Decision"},
+              {"src": "assets/gallery/crd/slide-07.png", "caption": "Phase 5 — Punch List / Reschedule Handling"},
+              {"src": "assets/gallery/crd/slide-08.png", "caption": "Phase 6 — No-Show Escalation"}
+            ]
+          </script>
           <div class="project-tagrow"><span class="project-fn-tag">Customer Relations Department</span></div>
           <h3>CRD Turnover Monitoring &amp; Automation</h3>
           <p class="project-snapshot-line">Smartsheet workflow automating the end-to-end real estate unit turnover process. <em>In progress — Phase 1–2.</em></p>
@@ -334,18 +366,6 @@
           <h3>Exit Interview Digitalization &amp; Analytics</h3>
           <p class="project-snapshot-line">Smartsheet-based exit interview system with automated interviewer routing, auto-generated fillable PDF records, and a dashboard surfacing resignation trends and tenure.</p>
           <div class="tag-row"><span class="tag">Smartsheet</span><span class="tag">Analytics</span></div>
-        </article>
-        <article class="project-card additional">
-          <div class="project-tagrow"><span class="project-fn-tag">Corporate Marketing</span></div>
-          <h3>Marketing Campaign Progress Tracker</h3>
-          <p class="project-snapshot-line">Multi-level workflow reminders giving Marketing Group managers and executives real-time visibility into campaign task progress. <em>Ongoing.</em></p>
-          <div class="tag-row"><span class="tag">Workflow Automation</span></div>
-        </article>
-        <article class="project-card additional">
-          <div class="project-tagrow"><span class="project-fn-tag">Business unit not specified in source material</span></div>
-          <h3>Residential Process Documentation</h3>
-          <p class="project-snapshot-line">End-to-end Business Process Architecture for the residential development lifecycle, from land acquisition through after-sales support. <em>Ongoing, targeting Dec 2026.</em></p>
-          <div class="tag-row"><span class="tag">Process Documentation</span></div>
         </article>
       </div>
 
@@ -572,6 +592,34 @@
     </section>
 
   </main>
+</div>
+
+<!-- Theme switcher: always visible, not part of the hidden résumé Easter egg -->
+<div class="theme-switcher" role="group" aria-label="Theme">
+  <button type="button" class="theme-btn" data-theme-choice="light" aria-pressed="false" aria-label="Light theme" title="Light">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  </button>
+  <button type="button" class="theme-btn" data-theme-choice="dark" aria-pressed="false" aria-label="Dark theme" title="Dark">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+  <button type="button" class="theme-btn" data-theme-choice="system" aria-pressed="false" aria-label="Match system theme" title="System">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+  </button>
+</div>
+
+<!-- Project evidence gallery / lightbox — opened by clicking a project's image -->
+<div class="gallery-backdrop" id="gallery-backdrop">
+  <div class="gallery-dialog" role="dialog" aria-modal="true" aria-label="Project image gallery">
+    <button type="button" class="gallery-close" id="gallery-close" aria-label="Close gallery">✕</button>
+    <button type="button" class="gallery-nav gallery-prev" id="gallery-prev" aria-label="Previous image">‹</button>
+    <img class="gallery-image" id="gallery-image" src="" alt="">
+    <button type="button" class="gallery-nav gallery-next" id="gallery-next" aria-label="Next image">›</button>
+    <div class="gallery-meta">
+      <p class="gallery-project" id="gallery-project"></p>
+      <p class="gallery-caption" id="gallery-caption"></p>
+      <p class="gallery-counter" id="gallery-counter" aria-live="polite"></p>
+    </div>
+  </div>
 </div>
 
 <!-- Hidden résumé design selector, revealed after 9 clicks/taps on the footer copyright -->
